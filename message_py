@@ -1,0 +1,93 @@
+# import pyautogui, sys, time
+# sys.platform="_"
+
+# time.sleep(5)
+# pyautogui.click(375,161)
+# time.sleep(0.2)
+# pyautogui.click(254,268)
+
+
+# time.sleep(0.2)
+# pyautogui.write("6232061964")
+# pyautogui.press("enter")
+# time.sleep(0.5)
+# pyautogui.click(205,388)
+
+# time.sleep(0.2)
+# pyautogui.click(539,929)
+
+# time.sleep(0.2)
+# pyautogui.click(619,702)
+
+import pyautogui, time
+
+message='''🎉 Congratulations on your rank! Now, the big question: which college will you choose? 🎓
+
+Don't worry, UniCounsellor is here to guide you through the entire counseling process for JOSSA (Mains only), JOSSA (Mains and Advance), JAC Delhi, and NEET (On special demand).
+
+What we offer:
+
+1-time call support
+1-time discussion with a college student of your choice
+Full WhatsApp support + 1 call
+Full WhatsApp + Call support
+Avail of our Early Bird Discount (up to 20% off)! Contact UniCounsellor now at 9817238494 and make the right choice for your future! 📚💼'''
+
+
+
+numbers='''
+9817238494
+'''
+
+numbers_list=[number.strip() for number in numbers.split() if number.strip().isnumeric()]
+# print(pyautogui.pixel(556,312))
+time.sleep(5)
+
+def func(number,message):
+    pyautogui.moveTo(445,87,duration=0.2)
+    pyautogui.click()
+    time.sleep(0.1)
+
+    pyautogui.moveTo(585,217,duration=0.2)
+    pyautogui.click()
+    time.sleep(0.1)
+
+    pyautogui.write(number, interval=0.01)
+    time.sleep(3)
+
+    pyautogui.moveTo(523,314,duration=0.5)
+    if not (pyautogui.pixelMatchesColor(523,314,(22,22,22)) or pyautogui.pixelMatchesColor(523,314,(23,23,23)) or pyautogui.pixelMatchesColor(523,314,(24,24,24))):
+        # print(pyautogui.pixel(598,310)[0])
+        # file.append(number+"\n")
+        print(number)
+        pyautogui.click(318,88,button='left')
+
+        return
+   
+    pyautogui.click()
+    time.sleep(2)
+
+    pyautogui.moveTo(621,984,duration=0.2)
+    pyautogui.click()
+    time.sleep(1)
+
+    pyautogui.moveTo(624,775,duration=0.2)
+    pyautogui.doubleClick()
+    time.sleep(3)
+
+    pyautogui.moveTo(287,214,duration=0.2)
+    pyautogui.doubleClick()
+    time.sleep(2)
+   
+    pyautogui.click(809,896)
+    time.sleep(0.2)
+
+    pyautogui.write(message,interval=0.01)
+    # pyautogui.press("enter")
+
+    pyautogui.click(318,88,button='left')
+
+for i in numbers_list:
+    func(i,message)
+    time.sleep(1)
+
